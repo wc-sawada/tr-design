@@ -1,0 +1,136 @@
+<sstag type="record_id">
+	table_id   = "cont_sawada"
+	record_id  = "1"
+</sstag>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ういし自己紹介サイト(゜-゜)</title>
+<meta name="description" content="$$cont.cont_sawada.description.disp$$">
+<meta name="keywords" content="$$cont.cont_sawada.keywords.disp$$">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/tr-design/sawada/css/reset.css" rel="stylesheet">
+<link href="/tr-design/sawada/css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/tr-design/sawada/js/script.js"></script>
+</head>
+<body>
+<div id="wrapper">
+<div class="loaderBack">
+	<img src="/tr-design/sawada/images/loading.png" alt="キウイフルーツ">
+	<span class="text">Loading...</span>
+</div>
+<sstag type="htmlinclude">
+path="/tr-design/sawada/include/header.html"
+</sstag>
+<!-- main start -->
+<div id="uiIntro" class="main">
+	<section id="about" class="aboutWrap">
+		<h2 class="cmnTitle">About</h2>
+		<div class="mainVisual">
+			<img src="/tr-design/sawada/images/kiui.jpg" alt="きうい">
+		</div>
+		<p class="text">
+			羽衣と書いて、ういと読みます。はごろもでは、ありません。<br>
+			下の名前で呼ばれることが多く、「うい氏」や「さわでぃ」と、よく呼ばれます。<br>
+			最初はSEで1年働いた後、フロントに携わりたいと思ってジョブチェンジしました。<br>
+			バックエンドも楽しいけど、フロントはもっと楽しいと感じている今日この頃でございます('ω')
+		</p>
+	</section>
+	<section id="skill" class="skillWrap cmnBgColor">
+		<h2 class="cmnTitle">Skill</h2>
+		<p class="cmnIntroText">
+			スキルというか…やったことあること←
+		</p>
+<sstag type="cont_disp">
+	table_id = 'cont_sawada_skill'
+	limit = '20'
+	header = '<ul>'
+	footer = '</ul>'
+	html = '<li><span class="name">%{cont.item.name.disp}</span><p class="text">%{cont.item.description.disp}</p></li>'
+</sstag>
+	</section>
+	<section id="like" class="likeWrap">
+		<h2 class="cmnTitle">Like</h2>
+		<p class="cmnIntroText">
+			自分が好きなものをご紹介。
+		</p>
+		<div class="item">
+			<p class="itemName">
+				【音楽】
+			</p>
+			<div class="musics">
+<sstag type="cont_disp">
+	table_id = 'cont_sawada_like'
+	composite_key = 'category = japanese_music'
+	limit = '20'
+	header = '<div><p class="itemCategory">邦楽</p><ul>'
+	footer = '</ul></div>'
+	html = '<li>%{cont.item.item_name.disp}</li>'
+</sstag>
+<sstag type="cont_disp">
+	table_id = 'cont_sawada_like'
+	composite_key = 'category = korean_music'
+	limit = '20'
+	header = '<div><p class="itemCategory">Korean Music</p><ul>'
+	footer = '</ul></div>'
+	html = '<li>%{cont.item.item_name.disp}</li>'
+</sstag>
+			</div>
+		</div>
+		<div class="recommend">
+			<div class="movie">
+				<iframe class="embed" src="https://www.youtube.com/embed/SkNB5AsgZOc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+			<p class="text">
+				韓国のシンガーソングライター。<br>
+				しゃれおつR&B
+			</p>
+		</div>
+		<div class="item anime">
+			<p class="itemName">
+				【漫画・アニメ】
+			</p>
+<sstag type="cont_disp">
+	table_id = 'cont_sawada_like'
+	composite_key = 'category = other'
+	limit = '20'
+	header = '<ul>'
+	footer = '</ul>'
+	html = '<li>%{cont.item.item_name.disp}</li>'
+</sstag>
+		</div>
+		<div class="recommend">
+			<div class="movie">
+				<iframe class="embed" src="https://www.youtube.com/embed/VMeSTyxgfcg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+			<p class="text">
+				主人公が絶望に陥る系が好き←<br>
+				ダークファンタジー。<br>
+				エイサ～イハラマスコ～イ
+			</p>
+		</div>
+	</section>
+	<section id="qA" class="qaWrap cmnBgColor">
+		<h2 class="cmnTitle">Q&nbsp;&&nbsp;A</h2>
+		<p class="cmnIntroText">
+			よくある質問をまとめてみました←
+		</p>
+<sstag type="cont_disp">
+	table_id = 'cont_sawada_qa'
+	limit = '20'
+	header = '<dl>'
+	footer = '</dl>'
+	html = '<dt>%{cont.item.question.disp}</dt><dd>%{cont.item.answer.disp}</dd>'
+</sstag>
+	</section>
+</div>
+<!-- main end -->
+<sstag type="htmlinclude">
+path="/tr-design/sawada/include/footer.html"
+</sstag>
+</div>
+</body>
+</html>

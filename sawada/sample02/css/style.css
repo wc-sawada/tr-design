@@ -1,0 +1,157 @@
+@charset "utf-8";
+/*=======================================
+「reset.css」には各タグの初期値を設定しています。
+=======================================*/
+
+/*******************************************
+Font-size Adjustment
+63% = 10px	|	100% = 16px	|	138% = 22px
+69% = 11px	|	107% = 17px	|	144% = 23px
+75% = 12px	|	113% = 18px	|	150% = 24px
+82% = 13px	|	119% = 19px	|	157% = 25px
+88% = 14px	|	125% = 20px	|	163% = 26px
+94% = 15px	|	132% = 21px	|
+********************************************/
+
+
+/*---------------------------------------
+Reset
+----------------------------------------*/
+html, body, 
+h1, h2, h3, h4, h5, h6, 
+div, p, dl, dt, dd, ol, ul, li, 
+span, a, strong, em, b, i, hr, del, dfn, img, ins, kbd, q, samp, small, sub, sup, var, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+fieldset, form, label, legend,
+object, iframe, blockquote, pre, abbr, address, cite, code, 
+article, aside, canvas, details, figcaption, figure, 
+footer, header, main, menu, nav, section, summary,
+time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	font-weight:normal;
+	vertical-align:baseline;
+	background:transparent;
+}
+
+:focus {
+	outline:0;
+}
+
+html { 
+	overflow-y:scroll;
+}
+
+body {
+	font-family:"メイリオ", ArialMT, "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", Arial, Helvetica, sans-serif;
+	font-size:16px;
+	*font-size:medium;
+	*font:x-small;
+	font-size:medium\9;
+	line-height:1.8;
+	color:#333;
+	-webkit-text-size-adjust:100%;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+body {
+	font-size:medium;
+}
+}
+
+header, main, menu, nav, section, article, aside, details, figcaption, figure, footer { 
+	display:block;
+}
+
+input, select, textarea, option, optgroup {
+	vertical-align:middle;
+	font-family:"UD新ゴ R", "メイリオ", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック",Arial, Helvetica, sans-serif !important;
+	font-size:100%;
+	font-weight:normal;
+}
+input[type="password"] {
+	font-family:Arial, Helvetica, sans-serif;
+}
+img {
+	border:0;
+}
+
+strong { 
+	font-family:"UD新ゴ DB";
+}
+
+table {
+	border-collapse:collapse;
+}
+
+ul, ol {
+	list-style:none;
+}
+
+em, address {
+	font-style:normal;
+}
+
+/*****************************/
+.phPractice {
+	width: 970px;
+	margin: 0 auto;
+	padding: 20px;
+}
+.title {
+	text-align: center;
+	color: #364e96;
+	padding: 8px 0;
+	border-top: solid 3px #364e96;
+	border-bottom: solid 3px #364e96;
+	font-size: 32px;
+}
+.list ul {
+	margin: 20px 0;
+}
+.list ul li::before {
+	content: "・";
+	display: inline-block;
+	vertical-align: top;
+}
+.list ul .link {
+	display: inline-block;
+	vertical-align: top;
+}
+.list ul a {
+	display: inline-block;
+}
+.onAir {
+	padding: 20px 0;
+}
+.animeIntro .tit {
+	margin-bottom: 10px;
+	font-size: 23px;
+	border-bottom: 2px solid #000;
+}
+.animeIntro .pv {
+	padding: 20px 0;
+	text-align: center;
+}
+.animeIntro .comment {
+	position: relative;
+	background: #afc3ff;
+	padding: 12px 20px;
+	margin-top: 25px;
+}
+.animeIntro .comment:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: -20px;
+	left: 0;
+	width: 0px;
+	height: 0px;
+	margin: auto;
+	border-style: solid;
+	border-color: transparent transparent #afc3ff transparent;
+	border-width: 0 20px 20px 20px;
+}

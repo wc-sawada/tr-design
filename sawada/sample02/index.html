@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>今季(2018年4月から)見てるアニメ</title>
+	<link href="/tr-design/sawada/sample02/css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="phPractice">
+<h1 class="title">今季(2018年4月から)見てるアニメ一覧(/・ω・)/</h1>
+<div class="list">
+<sstag type="cont_disp">
+	table_id = 'cont_anime'
+	order_item = 'display_order'
+	order_dir = 'asc'
+	limit = '100'
+	header = '<ul>'
+	footer = '</ul>'
+	html = '<li><div class="link"><a href="http://$$SERVER_NAME$$/tr-design/sawada/sample02/detail_%{cont.item.url_word.disp}.html">%{cont.item.title.disp}</a><br>
+	%{cont.item.site_url.disp}</div></li>'
+</sstag>
+</div>
+</div>
+</body>
+</html>

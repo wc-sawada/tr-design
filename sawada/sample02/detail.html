@@ -1,0 +1,32 @@
+<sstag type="record_id">
+	table_id   = "cont_anime"
+	record_key = "url_word = $$get.cont_id$$"
+</sstag>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>【$$cont.cont_anime.title.disp$$】の詳細 | 今季(2018年4月から)見てるアニメ</title>
+	<link href="/tr-design/sawada/sample02/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="phPractice">
+<h1 class="title">【$$cont.cont_anime.title.disp$$】の詳細</h1>
+	<div class="onAir">
+		放送日 : $$cont.cont_anime.on_air_date.disp$$<br>
+		放送局 : $$cont.cont_anime.broadcaster.disp$$
+	</div>
+	<div class="animeIntro">
+		<div class="story">
+			<h2 class="tit">あらすじ</h2>
+			<p>$$cont.cont_anime.story.disp$$</p>
+		</div>
+		<div class="pv">
+			$$cont.cont_anime.youtube.disp$$
+			<p class="comment">$$cont.cont_anime.comment.disp$$</p>
+		</div>
+	</div>
+	<a href="/tr-design/sawada/sample02/index.html">一覧に戻る</a>
+</div>
+</body>
+</html>
