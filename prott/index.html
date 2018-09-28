@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Prottつかってます</title>
+<link rel="stylesheet" type="text/css" href="/tr-design/prott/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/tr-design/prott/css/prottcall.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto" rel="stylesheet">
+<script src="/tr-design/prott/js/prottcall.js"></script>
+</head>
+<body>
+<header><h1>Prottつかってます！</h1></header>
+<div class="contentsWrapper">
+<div class="refreshWrapper">
+<div class="btn btn_refresh">
+<input type="button" value="最新の状況を見る" onclick="window.location.reload();" />
+</div>
+<!-- .refreshWrapper --></div>
+<div class="cardsWrapper">
+<sstag type="cont_disp">
+	table_id    = 'prott'
+	order_dir   = 'desc'
+	limit       = '100'
+	header      = '<ul>'
+	footer      = '</ul>'
+	html        = '
+	<sstag type="disp_control">
+		base_item = '%{cont.item.name.disp}'
+		exists_html = '
+<li class="card active">
+<div class="status">
+<h2>%{cont.item.division.disp}</h2>
+<h3>つかってます！</h3>
+<p>%{cont.item.name.disp}が<br>%{cont.item.date.disp}から%{cont.item.using_time.disp}使う予定</p>
+<a href="update_pre.html?in=%{cont.item.item_num.value}&rc=%{rec_id}"" target="prott_user" onClick="disp(\'update_pre.html?in=%{cont.item.item_num.value}&rc=%{rec_id}\')"></a>
+<!--.status--></div>
+<!--.card--></li>'
+		nodata_html = '
+<li class="card idle">
+<div class="status">
+<h2>%{cont.item.division.disp}</h2>
+<p>使えます</p>
+<a href="update_pre.html?in=%{cont.item.item_num.value}&rc=%{rec_id}"" target="prott_user" onClick="disp(\'update_pre.html?in=%{cont.item.item_num.value}&rc=%{rec_id}\')">
+<div class="btn btn_use">使う</div></a>
+<!--.status--></div>
+<!--.card--></li>'
+	</sstag>'
+</sstag>
+<!-- .cardsWrapper --></div>
+<!-- .contentsWrapper --></div>
+</body>
+</html>

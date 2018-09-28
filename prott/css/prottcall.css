@@ -1,0 +1,255 @@
+@charset "utf-8";
+/* ヘッダー */
+header {
+	background-color: #2B333B;
+	height: 56px;
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+}
+header h1 {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	padding: 9px 0px;
+}
+/* レイアウト */
+.contentsWrapper {
+	width: 100%;
+	padding: 56px 0;
+	text-align: center;
+}
+.refreshWrapper {
+	padding: 80px 0;
+	margin: 0 auto;
+}
+.cardsWrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.settingWrapper {
+	max-width: 500px;
+	margin: 56px auto;
+}
+/* ボタン */
+.btn{
+	display: inline-block;
+	height: 36px;
+	border-radius: 4px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 24%);
+	text-align: center;
+	font-size: 14px;
+	color: #FFF;
+	cursor:pointer;
+}
+.btn:hover {
+	filter: alpha(opacity=70);
+	/* IE 6,7*/
+	-ms-filter: "alpha(opacity=70)";
+	/* IE 8,9 */
+	-moz-opacity: 0.7;
+	/* FF , Netscape */
+	-khtml-opacity: 0.7;
+	/* Safari 1.x */
+	opacity: 0.7;
+}
+.refreshWrapper input[type=button] {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 14px;
+	color: #FFF;
+	cursor:pointer;
+}
+.btn_refresh {
+	width:90%;
+	max-width: 304px;
+	background-color: #5C90FC;
+}
+.btn_use {
+	max-width: 304px;
+	padding-top: 7px;
+	background-color: #FFC001;
+}
+.btn_logout {
+	width:100%;
+	max-width: 304px;
+	background-color: #5C90FC;
+}
+.settingWrapper button {
+	border: none;
+	cursor:pointer;
+	background-color: inherit;
+	font-size: 14px;
+	color: #FFF;
+}
+/* 共通パーツ */
+.contentsWrapper h2 {
+	font-size: 24px;
+}
+.contentsWrapper h3 {
+	font-size: 20px;
+	color: #FFF;
+}
+.subtext {
+	font-size: 14px;
+}
+/* カードの見た目 */
+.card {
+	position: relative;
+	padding: 16px;
+	margin-bottom: 24px;
+	border-radius: 4px;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 16%);
+	display: inline-flex;
+	text-align: left;
+}
+.idle {
+	background-color: #FFF;
+}
+.active {
+	background-color: #FFC001;
+}
+.cardsWrapper .active:hover {
+	filter: alpha(opacity=70);
+	/* IE 6,7*/
+	-ms-filter: "alpha(opacity=70)";
+	/* IE 8,9 */
+	-moz-opacity: 0.7;
+	/* FF , Netscape */
+	-khtml-opacity: 0.7;
+	/* Safari 1.x */
+	opacity: 0.7;
+}
+.status {
+	display: block;
+}
+/* カード一覧のパーツ */
+.cardsWrapper .card {
+	width: 80%;
+	max-width: 336px;
+	min-height: 208px;
+}
+.cardsWrapper .btn_use {
+	position:relative;
+	display:block;
+	margin: 150px auto 0 auto;
+}
+.cardsWrapper h3 {
+	margin-top: 16px;
+}
+.cardsWrapper p {
+	margin-top: 24px;
+}
+.cardsWrapper ul {
+	max-width: 1024px;
+	margin-right: -24px;
+	overflow: hidden;
+}
+.cardsWrapper li {
+	margin-right: 24px;
+}
+.cardsWrapper a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+/* セッティングのパーツ */
+.settingWrapper .card {
+	width: 80%;
+	max-width: 336px;
+	min-height: 373px;
+}
+.settingWrapper .status{
+	width:304px;
+}
+.settingWrapper .btn_use {
+	position:relative;
+	display:block;
+	margin-top:24px;
+	width:100%;
+}
+.settingWrapper h3 {
+	margin-top: 80px;
+}
+.nameWrapper {
+	margin-top: 62px;
+	height: 56px;
+}
+.nameWrapper input {
+	padding: 14px;
+	height: 56px;
+	width: 100%;
+	border-radius: 4px 4px 0 0;
+	background-color: #F6F6F6;
+}
+.nameWrapper label {
+	display: block;
+	position: relative;
+	top: -40px;
+	left: 14px;
+	color: #AAAAAA;
+}
+input[type="text"]:focus {
+	padding: 18px 16px 2px 14px;
+	border-bottom: solid 2px #5C90FC;
+	outline: 0;
+}
+input[type="text"]:focus + label {
+	font-size: 12px;
+	color: #5C90FC;
+	top: -50px;
+	transition: top .1s;
+}
+.usetimeWrapper {
+	margin-top:61px;
+}
+.usetimeWrapper > label {
+	display: block;
+	font-size: 14px;
+}
+.item_usetime {
+	padding-top: 8px;
+	height:32px;
+}
+.item_usetime label {
+	display:inline-block;
+	padding:4px 12px;
+	margin-right:3px;
+	margin-bottom: 8px;
+	height:32px;
+	border-radius: 16px;
+	background-color: #E1E1E1;
+	font-size:14px;
+	cursor: pointer
+}
+.item_usetime input:checked + label {
+	background-color: #FFF46E;
+}
+.item_usetime input {
+	display: none;
+}
+.settingWrapper .btn_logout {
+	position: relative;
+	display: block;
+	margin-top: 85px;
+	width: 100%;
+	background-image: url(/tr-design/prott/img/round-exit_to_app.png);
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: 52px center;
+}
+.settingWrapper .btn_logout input {
+	max-width: 304px;
+	background-color: #5C90FC;
+	color: #ffffff;
+}
+.active .subtext {
+	padding-top: 8px;
+}
+input.btn_use {
+	padding-top: 0;
+}

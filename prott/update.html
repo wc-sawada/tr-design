@@ -1,0 +1,94 @@
+<sstag type="start_session">
+	id="prott_user"
+</sstag>
+<sstag type="record_id">
+	table_id   = "prott"
+	record_id  = "$$get.rc$$"
+</sstag>
+<sstag type="form_validation">
+	form_id  = "prott_user"
+	redirect_ok = 'update_start.html?in=$$get.in$$&rc=$$get.rc$$'
+	screening   = no
+</sstag>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Prottつかってます</title>
+<link rel="stylesheet" type="text/css" href="/tr-design/prott/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/tr-design/prott/css/prottcall.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto" rel="stylesheet">
+<script src="/tr-design/prott/js/prottcall.js"></script>
+</head>
+<body>
+<header>
+<h1>Prottつかってます！</h1>
+</header>
+<div class="contentsWrapper">
+<div class="settingWrapper">
+<!-- 名前が登録されているかチェック -->
+<sstag type="disp_control">
+	base_item = '$$cont.prott.name.disp$$'
+	exists_html = '
+<div class="card active">
+<div class="status">
+<h2>$$cont.prott.division.disp$$</h2>
+<h3>$$cont.prott.name.disp$$ が<br>つかってます！</h3>
+<form action="" method="post">
+<input name="using_time" type="hidden" value="">
+<input name="name" type="hidden" value="">
+<input name="date" type="hidden" value="">
+<input class="btn btn_logout btn_logout_text" type="submit" value="ログアウトを宣言する">
+</form>
+<p class="subtext">※他の人が使っているときは押さないでね！</p>
+<!--.status--></div>
+<!--.card--></div>'
+	nodata_html = '
+<div class="card idle">
+<div class="status">
+<h2>$$cont.prott.division.disp$$</h2>
+<form action="" method="post">
+<sstag type="form_disp">
+	form_id  = 'prott_user'
+	group_id = 'prott_group_02'
+	html = '<div class="nameWrapper">
+			<input type="text" name="%{form.item.name}" id="%{form.item.name}" maxlength="10" onfocus="if(this.value){namelabel.style.display=&quot;block&quot;;}" onblur="chktext(this)">
+			<label for="%{form.item.name}" id="namelabel">名前</label>
+			</div>'
+	error1   = '<p class="error">※'
+	error2   = '</p>'
+</sstag>
+<div class="usetimeWrapper">
+<label for="usetime">使用予定時間</label>
+<div class="item_usetime">
+<span class="labelBlock"><input type="radio" id="using_time_1" name="using_time" value="10分" checked><label for="using_time_1">10分</label></span>
+<span class="labelBlock"><input type="radio" id="using_time_2" name="using_time" value="30分"><label for="using_time_2">30分</label></span>
+<span class="labelBlock"><input type="radio" id="using_time_3" name="using_time" value="1時間"><label for="using_time_3">1時間</label></span>
+<span class="labelBlock"><input type="radio" id="using_time_4" name="using_time" value="半日"><label for="using_time_4">半日</label></span>
+<span class="labelBlock"><input type="radio" id="using_time_5" name="using_time" value="終日"><label for="using_time_5">終日</label></span>
+</div>
+</div>
+<input id="time" name="date" type="hidden" value="">
+<input class="btn btn_use" type="submit" value="使う"></div>
+</form>
+</div>
+</div>'
+</sstag>
+<script type="text/javascript">
+var get_current_timestamp = function() {
+    var d = new Date();
+    var month  = d.getMonth() + 1;
+    var day    = d.getDate();
+    var hour   = d.getHours();
+    var minute = d.getMinutes();
+// 月と日は0無し
+//    if (month < 10) {month = "0" + month;}
+//    if (day < 10) {day = "0" + day;}
+    if (hour < 10) {hour = "0" + hour;}
+    if (minute < 10) {minute = "0" + minute;}
+    return month + "月" + day + "日 " + hour + ":" + minute;
+}
+document.getElementById('time').value = get_current_timestamp();
+</script>
+</body>
+</html>

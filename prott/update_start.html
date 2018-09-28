@@ -1,0 +1,27 @@
+<sstag type="start_session">
+	id="prott_user"
+</sstag>
+<sstag type="form_write_group">
+	form_id = "prott_user"
+	group_id = "prott_group_01,prott_group_02,prott_group_03"
+	rec_id = "$$get.rc$$"
+	duplicate = 0
+</sstag>
+<sstag type="end_session">
+	id="prott_user"
+</sstag>
+<sstag type="start_session">
+	id="prott_user"
+</sstag>
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function subwin(){
+	window.close();
+}
+</script>
+</head>
+<body onLoad="window.opener.location.reload(),setTimeout('subwin()', 0)">
+</body>
+</html>

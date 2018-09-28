@@ -1,0 +1,17 @@
+<sstag type="start_session">
+	id="prott_user"
+</sstag>
+
+<sstag type="form_item_conv">
+	form_id = "prott_user"
+	logic   = "ClearFormLogic"
+</sstag>
+
+<sstag type="record_id">
+	table_id = "prott"
+	ignore_pubflag = 1
+	record_id = $$get.rc$$
+	record_key = 'item_num=$$get.in$$'
+	form_id = "prott_user"
+	found_url = 'update.html?in=$$get.in$$&rc=$$get.rc$$'
+</sstag>
